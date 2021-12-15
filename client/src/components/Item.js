@@ -26,7 +26,7 @@ function Item(props) {
   const handleEdit = ()=> {
     //1. Capture the click of an edit button.
     //2. Redirect to the edit page.
-    push('/');
+    push('/update-item');
 
     //3. User edits item information.
     //4. Click the update button.
