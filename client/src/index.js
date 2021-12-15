@@ -51,7 +51,8 @@ const App = () => {
 
       <Route path="/update-item/:id" render={(props)=> {
         console.log(props);
-        return <UpdateForm {...props} setItems={setItems}/>
+        // return <UpdateForm {...props} setItems={setItems}/>
+        return <UpdateForm history={props.history} match={props.match} setItems={setItems}/>
       }}/>
 
       {/* <Route path="/update-item/:id">
