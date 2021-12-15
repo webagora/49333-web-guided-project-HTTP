@@ -50,6 +50,8 @@ const UpdateForm = props => {
     //6. Redirect to the item
   };
 
+  console.log(item);
+  
   return (
     <div>
       <h2>Update Item</h2>
