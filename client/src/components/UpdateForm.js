@@ -39,9 +39,9 @@ const UpdateForm = props => {
   const handleSubmit = e => {
     e.preventDefault();
     //4. Click the update button.
-  //5. Put request to edit the data.
-  //6. Redirect to the item.
-
+    axios.put()
+    //5. Put request to edit the data.
+    //6. Redirect to the item
   };
 
   return (
