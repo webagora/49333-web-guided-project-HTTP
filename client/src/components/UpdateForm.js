@@ -12,11 +12,11 @@ const initialItem = {
 
 const UpdateForm = props => {
   const [item, setItem] = useState(initialItem);
-  // const { id } = useParams();
-  // const { push } = useHistory();
-  const { id } = props.match.params;
-  const { push } = props.history;
-  
+  const { id } = useParams();
+  const { push } = useHistory();
+  // const { id } = props.match.params;
+  // const { push } = props.history;
+
   const changeHandler = ev => {
     ev.persist();
     let value = ev.target.value;
