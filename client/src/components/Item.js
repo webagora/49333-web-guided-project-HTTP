@@ -21,7 +21,7 @@ function Item(props) {
   }
 
   const handleEdit = ()=> {
-    console.log("clicking");
+    
   }
 
   return (
