@@ -22,6 +22,10 @@ const App = () => {
       .catch(error => console.log(error));
   }, []);
 
+  const deleteItem = (id) => {
+    setItems(items.filter(item=> (item.id !== id)));
+  }
+
   return (
     <div className="App">
       <nav>
@@ -45,7 +49,7 @@ const App = () => {
       />
       <Route
         path="/item-list/:id"
-        render={props => <Item {...props} setItems={setItems} />}
+        render={props => <Item {...props} deleteItem={deleteItem} setItems={setItems} />}
       />
       <Route path="/item-form" component={ItemForm} />
 
