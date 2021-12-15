@@ -27,9 +27,9 @@ const UpdateForm = props => {
   };
 
   useEffect(()=> {
-    axios.get(`http://localhost:3333/items/2`)
+    axios.get(`http://localhost:3333/items/3`)
       .then(resp=> {
-        console.log(resp.data);
+        setItem(resp.data);
       })
   }, []);
 
