@@ -49,15 +49,14 @@ const App = () => {
       />
       <Route path="/item-form" component={ItemForm} />
 
-      <Route path="/update-item/:id" render={(props)=> {
-        console.log(props);
-        // return <UpdateForm {...props} setItems={setItems}/>
-        return <UpdateForm history={props.history} match={props.match} setItems={setItems}/>
-      }}/>
+      {/* <Route path="/update-item/:id" render={(props)=> {
+        return <UpdateForm {...props} setItems={setItems}/>
+        // return <UpdateForm history={props.history} match={props.match} setItems={setItems}/>
+      }}/> */}
 
-      {/* <Route path="/update-item/:id">
+      <Route path="/update-item/:id">
         <UpdateForm setItems={setItems}/>
-      </Route> */}
+      </Route>
     </div>
   );
 };
