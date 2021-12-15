@@ -26,6 +26,11 @@ const UpdateForm = props => {
     });
   };
 
+  //3. User edits item information.
+  //4. Click the update button.
+  //5. Put request to edit the data.
+  //6. Redirect to the item.
+
   const handleSubmit = e => {
     e.preventDefault();
   };
