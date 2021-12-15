@@ -33,6 +33,7 @@ function Item(props) {
     //1. Capture the click of the delete button.
     //2. axios call for delete on our current id
     //3. update local state!!!!
+    //4. redirect to main page
   }
 
   return (
