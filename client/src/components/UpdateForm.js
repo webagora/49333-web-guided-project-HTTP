@@ -27,6 +27,7 @@ const UpdateForm = props => {
     });
   };
 
+  //3. We get item and the user edits item information.
   useEffect(()=> {
     axios.get(`http://localhost:3333/items/${id}`)
       .then(resp=> {
@@ -34,13 +35,13 @@ const UpdateForm = props => {
       })
   }, []);
 
-  //3. User edits item information.
-  //4. Click the update button.
+  
+  const handleSubmit = e => {
+    e.preventDefault();
+    //4. Click the update button.
   //5. Put request to edit the data.
   //6. Redirect to the item.
 
-  const handleSubmit = e => {
-    e.preventDefault();
   };
 
   return (
