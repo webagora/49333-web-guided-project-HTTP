@@ -25,7 +25,7 @@ function Item(props) {
 
   const handleEdit = ()=> {
     //1. Capture the click of an edit button.
-    //2. Redirect to the edit page.
+    //2. Redirect to the edit page. Execution moves to UpdateForm.
     push('/update-item');
   }
 
