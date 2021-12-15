@@ -31,6 +31,13 @@ function Item(props) {
 
   const handleDelete = ()=> {
     //1. Capture the click of the delete button.
+    axios.delete(`http://localhost:3333/items/${id}`)
+      .then(resp=> {
+        console.log(resp);
+      })
+      .catch(err=> {
+        console.log(err);
+      })
     //2. axios call for delete on our current id
     //3. update local state!!!!
     //4. redirect to main page
