@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { Route, NavLink, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 import ItemDescription from './ItemDescription';
@@ -23,6 +23,7 @@ function Item(props) {
   const handleEdit = ()=> {
     //1. Capture the click of an edit button.
     //2. Redirect to the edit page.
+
     //3. User edits item information.
     //4. Click the update button.
     //5. Put request to edit the data.
