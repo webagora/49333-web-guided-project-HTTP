@@ -27,7 +27,10 @@ const UpdateForm = props => {
   };
 
   useEffect(()=> {
-    
+    axios.get(`http://localhost:3333/items/2`)
+      .then(resp=> {
+        console.log(resp.data);
+      })
   }, []);
 
   //3. User edits item information.
