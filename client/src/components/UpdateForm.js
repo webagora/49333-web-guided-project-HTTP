@@ -13,6 +13,7 @@ const initialItem = {
 const UpdateForm = props => {
   const [item, setItem] = useState(initialItem);
   const { id } = useParams();
+  const { push } = useHistory();
 
   const changeHandler = ev => {
     ev.persist();
@@ -39,19 +40,21 @@ const UpdateForm = props => {
   const handleSubmit = e => {
     e.preventDefault();
     //4. Click the update button.
+
+    //5. Put request to edit the data.
     axios.put(`http://localhost:3333/items/${id}`, item)
       .then(resp=> {
         console.log(resp);
+
       })
       .catch(err=>{
         console.log(err);
       })
-    //5. Put request to edit the data.
-    //6. Redirect to the item
+  
   };
 
   console.log(item);
-  
+
   return (
     <div>
       <h2>Update Item</h2>
