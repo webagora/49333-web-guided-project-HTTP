@@ -33,7 +33,7 @@ function Item(props) {
     //1. Capture the click of the delete button.
     axios.delete(`http://localhost:3333/items/${id}`)
       .then(resp=> {
-        console.log(resp);
+        push('/item-list');
       })
       .catch(err=> {
         console.log(err);
