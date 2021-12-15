@@ -10,7 +10,7 @@ function Item(props) {
   const { id } = props.match.params;
 
   // const { push } = useHistory();
-  const { push } = props
+  const { push } = props.history;
 
   useEffect(()=>{
     axios.get(`http://localhost:3333/items/${id}`)
