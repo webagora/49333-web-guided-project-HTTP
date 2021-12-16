@@ -40,15 +40,22 @@ const UpdateForm = props => {
       ...item,
       [ev.target.name]: value
     });
-  };
+  };    
     
+  const handleSubmit = e => {
     //4. User changes the data.
     //5. Clicking the update button.
-    //6. Put request to update the data.
-    //7. Redirect the user to the item page.
-
-  const handleSubmit = e => {
     e.preventDefault();
+    //6. Put request to update the data.
+    axios.put(`http://localhost:3333/items/${id}`, item)
+      .then(resp=> {        
+        //7. Redirect the user to the item page.       
+        push(`/item-list/${id}`);
+
+      })
+      .catch(err=> {
+        console.log(err);
+      })
   };
 
   return (
