@@ -13,10 +13,10 @@ const initialItem = {
 const UpdateForm = props => {
   const [item, setItem] = useState(initialItem);
 
-  console.log('useParams: ', useParams());
-
-  const { id } = useParams();
-  const { push } = useHistory();
+  // const { id } = useParams();
+  const { id } = props.match.params;
+  // const { push } = useHistory();
+  const { push } = props.history;
 
   //3. Get the data for the item we are editing.
   useEffect(()=> {

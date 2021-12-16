@@ -27,7 +27,7 @@ function Item(props) {
     //1. Capture the click of an edit button.
     //2. Redirect the user to the edit form.
 
-    push(`/item-update/`);
+    push(`/item-update/${id}`);
 
     // props.history.push(`/item-update/`); // working
     // useHistory.push(`/item-update/`); // TypeError: _reactRouterDom.useHistory.push is not a function at handleEdit
