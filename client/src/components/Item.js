@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { Route, NavLink, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 import ItemDescription from './ItemDescription';
@@ -8,6 +8,9 @@ import ItemShipping from './ItemShipping';
 function Item(props) {
   const [item, setItem] = useState({});
   const { id } = props.match.params;
+
+  // const { push } = useHistory();
+  const { push } = props.history;
 
   useEffect(()=>{
     axios.get(`http://localhost:3333/items/${id}`)
@@ -21,8 +24,15 @@ function Item(props) {
   }
 
   const handleEdit = () => {
+    console.log('click');
     //1. Capture the click of an edit button.
     //2. Redirect the user to the edit form.
+
+    push(`/item-update/`);
+
+    // props.history.push(`/item-update/`); // working
+    // useHistory.push(`/item-update/`); // TypeError: _reactRouterDom.useHistory.push is not a function at handleEdit
+
     //3. Get the data for the item we are editing.
     //4. User changes the data.
     //5. Clicking the update button.
