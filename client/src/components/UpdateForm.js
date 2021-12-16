@@ -13,10 +13,10 @@ const initialItem = {
 const UpdateForm = props => {
   const [item, setItem] = useState(initialItem);
 
-  // const { id } = useParams();
-  const { id } = props.match.params;
-  // const { push } = useHistory();
-  const { push } = props.history;
+  const { id } = useParams();
+  // const { id } = props.match.params;
+  const { push } = useHistory();
+  // const { push } = props.history;
 
   //3. Get the data for the item we are editing.
   useEffect(()=> {
@@ -48,8 +48,10 @@ const UpdateForm = props => {
     e.preventDefault();
     //6. Put request to update the data.
     axios.put(`http://localhost:3333/items/${id}`, item)
-      .then(resp=> {        
-        //7. Redirect the user to the item page.       
+      .then(resp=> {
+        //7. Redirect the user to the item page.
+        //8. Update local storage with our new item list
+        props.setItems(resp.data);
         push(`/item-list/${id}`);
 
       })
