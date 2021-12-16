@@ -6,6 +6,7 @@ import ItemDescription from './ItemDescription';
 import ItemShipping from './ItemShipping';
 
 function Item(props) {
+  const { deleteItem } = props
   const [item, setItem] = useState({});
   const { id } = props.match.params;
 
@@ -33,6 +34,23 @@ function Item(props) {
     // useHistory.push(`/item-update/`); // TypeError: _reactRouterDom.useHistory.push is not a function at handleEdit
 
   }  
+
+  //To Delete:
+  //1. Capture a click.
+  //2. Send our axios call to delete current item (id)
+  //3. Redirect user to item list page.
+  //4. Update local state
+  const handleDelete = () => {
+    axios.delete(`http://localhost:3333/items/${id}`)
+      .then(resp=>{
+        // props.setItems(resp.data);
+        deleteItem(id);
+        push('/item-list');
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }
 
   return (
     <div className="item-wrapper">
@@ -63,7 +81,7 @@ function Item(props) {
       <button onClick = { handleEdit } className="md-button">
         Edit
       </button>
-      <button className="md-button">
+      <button onClick = { handleDelete } className="md-button">
         Delete
       </button>
     </div>
