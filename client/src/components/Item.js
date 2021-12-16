@@ -20,6 +20,16 @@ function Item(props) {
     return <h2>Loading item data...</h2>;
   }
 
+  const handleEdit = () => {
+    //1. Capture the click of an edit button.
+    //2. Redirect the user to the edit form.
+    //3. Get the data for the item we are editing.
+    //4. User changes the data.
+    //5. Clicking the update button.
+    //6. Put request to update the data.
+    //7. Redirect the user to the item page.
+  }  
+
   return (
     <div className="item-wrapper">
       <div className="item-header">
@@ -46,7 +56,7 @@ function Item(props) {
         path="/item-list/:id/shipping"
         render={props => <ItemShipping {...props} item={item} />}
       />
-      <button className="md-button">
+      <button onClick = { handleEdit } className="md-button">
         Edit
       </button>
       <button className="md-button">
