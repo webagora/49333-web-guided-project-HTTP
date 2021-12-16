@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
@@ -13,6 +13,22 @@ const initialItem = {
 const UpdateForm = props => {
   const [item, setItem] = useState(initialItem);
 
+  console.log('useParams: ', useParams());
+
+  const { id } = useParams();
+  const { push } = useHistory();
+
+  //3. Get the data for the item we are editing.
+  useEffect(()=> {
+    axios.get(`http://localhost:3333/items/${id}`)
+      .then(resp=> {
+        setItem(resp.data);
+      })
+      .catch(err=> {
+        console.log(err);
+      })
+  }, []);
+
   const changeHandler = ev => {
     ev.persist();
     let value = ev.target.value;
@@ -25,6 +41,11 @@ const UpdateForm = props => {
       [ev.target.name]: value
     });
   };
+    
+    //4. User changes the data.
+    //5. Clicking the update button.
+    //6. Put request to update the data.
+    //7. Redirect the user to the item page.
 
   const handleSubmit = e => {
     e.preventDefault();
